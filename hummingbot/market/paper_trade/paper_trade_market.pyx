@@ -169,7 +169,7 @@ cdef class OrderBookMarketOrderFillListener(EventListener):
 
 
 cdef class PaperTradeMarket(MarketBase):
-    TRADE_EXECUTION_DELAY = 5.0
+    TRADE_EXECUTION_DELAY = 0.5
     ORDER_FILLED_EVENT_TAG = MarketEvent.OrderFilled.value
     SELL_ORDER_COMPLETED_EVENT_TAG = MarketEvent.SellOrderCompleted.value
     BUY_ORDER_COMPLETED_EVENT_TAG = MarketEvent.BuyOrderCompleted.value
@@ -212,7 +212,7 @@ cdef class PaperTradeMarket(MarketBase):
 
     def split_trading_pair(self, trading_pair: str) -> Tuple[str, str]:
         return self._target_market.split_trading_pair(trading_pair)
-    #  <editor-fold desc="Property">
+
     @property
     def trading_pair(self) -> Dict[str, TradingPair]:
         return self._trading_pairs
