@@ -157,7 +157,7 @@ cdef class OrderBookMarketOrderFillListener(EventListener):
         order_book.record_filled_order(event_object)
 
 
-cdef class PaperTradeMarket(MarketBase):
+cdef class PaperTradeMarket(ExchangeBase):
     TRADE_EXECUTION_DELAY = 0.5
     ORDER_FILLED_EVENT_TAG = MarketEvent.OrderFilled.value
     SELL_ORDER_COMPLETED_EVENT_TAG = MarketEvent.SellOrderCompleted.value
